@@ -1,0 +1,15 @@
+1. [www.makesense.ai](http://www.makesense.ai/)
+2. Click on Get Started
+3. Upload your video frames
+4. Click on Object Detection
+5. Create your behavior labels
+    a. Put one for each sub behavior
+    b. Attending, huddle, climbing, OneFriendEat
+6. Click on **Start Project** and begin labeling
+    a. Point
+7. When finished, click on **Actions** → Export annotations → single CSV file
+    a. name the CSV file: labels
+8. **Create a folder with two subfolders and label the subfolders: *images and labels***
+    a. **In the images folder, upload your video frames**
+    b. **In the labels folder, upload the exported CSV file from makesense.ai and change the excel file to *labels (from step 8 below)***
+9. Move the folder containing the subfolders to the AlphaClass folder on Goat

@@ -1,0 +1,88 @@
+- ****Must train & make predictions in GPU computer** (One type to install AlphaClass on the computer)***
+- Copy **AlphaTracker2-main** and **AlphaTracker2-behavior-FOMO** into desktop from the AlphaClass folder in the Documents folder
+- Open an Anaconda Prompt terminal **(Installing AlphaClass)**
+- Create the environment
+    - conda env create -f environment.yml
+    - new environment file should contain:
+        - pip install imutils
+        - pip install kornia==0.5.8
+        - pip install kornia
+
+- Install other packages that are needed
+    - pip install -U albumentations
+        - conda install -c conda-forge albumentations
+    - conda install git
+    - conda install -c pytorch torchvision cudatoolkit=10.1 pytorch
+    - https://qengineering.eu/install-pytorch-on-raspberry-pi-4.html
+    - windows pip ins
+        - `pip install opencv-python==4.5.5.64`
+        - pip install opencv-contrib-python
+    - linux
+        - conda install -c conda-forge opencv
+        - `pip3 install opencv-python`
+        - `$ conda install shapely --channel conda-forge`
+    
+    https://pytorch.org/tutorials/intermediate/realtime_rpi.html
+
+
+Training:
+---------
+- Type on prompt: **conda activate FOMO (on goat)**
+- On the Anaconda Prompt terminal, change directory to AlphaTracker2-behavior
+    - Cd Desktop
+- Open AlphaTracker2-behavior-FOMO folder and **edit** the **json** file
+    - You can edit it with Notepad
+    - On the json file, **change** "labeled_data_path": "”C**:\\**____\\"
+        - Change the labeled data_path to the folder that contains the labels and the images
+            - Make sure that the path has double backlash (\\)
+        - “Batch_size”: 4 → change batch size to max that fits your GPU
+            - 4 is good for Goat
+        - give it more stuff to look at once - so give it to the model more, so can see the landscape better
+        - if the dimensions need to be changed:
+            - “image_training_width”:
+            - “image_training_height”:
+- Now to begin training:
+    - Type on prompt: **python train.py --options standard.json**
+- While running command, small black windows should pop up, which are your predictions of test data set
+    - White dots should appear in the black pop up windows, which represent location of behaviors in that image, if that behavior is present in that image
+        - Black in window = 0
+        - White dot = 1
+    - To **stop** training: type *Control C* on terminal (*not necessary to manually stop training*)
+        - Can stop when around 250 epoch, make sure GPU doesn’t go over 75 degrees, if it does then stop the training
+            - To check the GPU temperature, open task manager using Ctrl, ALT, Del
+
+
+RESULTS FOR TRAINED MODEL
+- Location where trained data is saved: **Results directory**
+- Every time you run command: python train.py --options standard.json, whether it be successful or not, it will create folder called **run**0,1,..,.n
+    - Should have 5 folders:
+        1. Augmentation
+        2. metrics (can load onto jupyter notebook and plot)
+            1. epoch #, train loss, test loss, learning rate/over time
+        3. best
+        4. last
+        5. json
+            1. Tells you location of where results are saved (“exp_path”)
+- Rename the run file to run-Cage#M#-FOMO
+
+
+# **Tracking/Inference and Plotting on all Videos:**
+- Open the AlphaClas_inference_plot_v4 file on matlab
+    - Load the correct directory for the videos
+    - Run the code and copy paste the outputvid_char file into an excel file
+    - find and replace all ‘ and replace with nothing to remove the apostrophes
+        - Copy and paste everything into notepad, and rename it Cage100-105-inference-plot.bat (must be a .bat file)
+        - Store in ALphaClass folder
+- Run the bat file for inference and plotting
+    - Cd to the AlphaClass folder
+    - type : Cage100-105-inference-plot.bat (and it should start working)
+- watch the plotted video and see if the labels are correct, they are stored in the Results/run0-03-05-23/video_inference_runs folder
+    - Return to results folder, and select run#
+        - A new folder called video inference_runs should be created
+    - Inside the **video_inference_runs** folder, you should find subfolders for each run
+        - Inside the run subfolders, you will find the **label_idx** json file, which contains your labels for specific behaviors *g. 0 = chasing, 1 = face2face*
+- If the labels are not correct on the plotted file, ctrl-c, and remove all the runs generated in the video_infernece_runs folder and put them in an archive folder and add more frames and retrain a new model
+- Once the plotted videos are good, then when everything is done, rename all the runs 0-9 to run 00 , run 01, run 02 … run 09 (this is important for analysis later on, otherwise the order is wrong)
+
+
+
