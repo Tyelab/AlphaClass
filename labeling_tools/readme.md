@@ -1,6 +1,6 @@
 # Extracting frames
 
-Open Jupyter Notebook in extract_frames/GetThoseFrames_forALPHACLASS
+Open the Jupyter Notebook in extract_frames/GetThoseFrames_forALPHACLASS.ipynb
  
 the path to the GetThoseFrames Python code
 Click get those frames
