@@ -7,11 +7,11 @@ Click get those frames.
 In the code, change the video path to the folder where you videos are and the output folder to the folder where you want the frames to go the videos should be in mp4 format.
 
 In the demo example, you will sift through frames and divide them into folders for
-- Attending (500)
-- Nothing (50)
-- Huddle (200)
-- Climbing (300)
-- OneFriendEat (200)
+- Attending (500)  The alone mouse is attending to the port.
+- Nothing (50)  
+- Huddle (200)  The social mice have formed a huddle around the milkshake port
+- Climbing (300)  The alone mouse is climbing
+- OneFriendEat (200)  ??
 
 
 # Annotation
@@ -21,8 +21,8 @@ In the demo example, you will sift through frames and divide them into folders f
 3.	Upload your video frames
 4.	Click on Object Detection
 5.	Create your behavior labels 
-	1.	Put one for each sub behavior
-	2.	Attending, huddle, climbing, OneFriendEat
+	1.	You will create each behavior label, separately. AlphaClass is a binary classifier.
+	2.	In the demo example, you will need labels for each of these behaviors: Attending, huddle, climbing, OneFriendEat
 6.	Click on Start Project and begin labeling Point
 7.	When finished, click on Actions → Export annotations → single CSV file 
 	1.	name the CSV file: labels
