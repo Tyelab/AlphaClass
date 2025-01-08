@@ -2,10 +2,11 @@
 
 Open the Jupyter Notebook in extract_frames/GetThoseFrames_forALPHACLASS.ipynb
  
-the path to the GetThoseFrames Python code
-Click get those frames
-In the code, change the video path to the folder where you videos are and the output folder to the folder where you want the frames to go the videos should be in mp4 format
-Sift through frames and divide them into folders for
+Update the path to the GetThoseFrames Python code.
+Click get those frames.
+In the code, change the video path to the folder where you videos are and the output folder to the folder where you want the frames to go the videos should be in mp4 format.
+
+In the demo example, you will sift through frames and divide them into folders for
 - Attending (500)
 - Nothing (50)
 - Huddle (200)
