@@ -1,4 +1,4 @@
-#Extracting frames
+# Extracting frames
 
 Open Jupyter Notebook in extract_frames/GetThoseFrames_forALPHACLASS
  
