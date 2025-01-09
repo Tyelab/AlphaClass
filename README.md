@@ -58,4 +58,17 @@ Training_Data/
     ├── labels.csv
 ```
 
+Here is an example of the labels.csv.  Note that image4 contains multiple labels. 
+
+|-----------|------|------|------------|----|-----|
+| :--- |     :----: | ---: | :--- | :----: | ---: |
+| Grooming  | 	236|	236 | image1.jpg |960|  540  |
+| Nothing|	236|	236|	image2.jpg|	960|	540|
+| Rearing|	283|	252|	image3.jpg|	960|	540|
+| Rearing|	275|	266|	image4.jpg|	960|	540|
+| Huddle|	275|	266|	image4.jpg|	960|	540|
+| Nothing|	231|	413|	image5.jpg|	960|	540|
+| Nothing|	236|	236|	image6.jpg|	960|	540|
+|-----------|------|------|-------|----|------|
+
 
