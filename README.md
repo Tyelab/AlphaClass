@@ -45,6 +45,7 @@ AlphaClass is a supervised classification method, which means it must have label
   2.	In the labels folder, upload the exported CSV file from makesense.ai and change the excel file to labels.csv.
 
 In the end, you should have a folder of extracted images saved in images, and a folder called labels containing a single file named labels.csv.
+```
 Training_Data/
 └── images
     ├── image1.jpg
@@ -55,5 +56,6 @@ Training_Data/
     ├── image6.jpg
 └── labels
     ├── labels.csv
+```
 
 
