@@ -24,7 +24,36 @@ AlphaClass has been tested on Windows 10 Pro with a GPU (Quadro RTX 4000), that 
 
 
 # Labeling data
-AlphaClass is a supervised classification method, which means it must have labeled data on which to train a model.  This amounts to a two step process. First, the user must extract frames from the video showing the behavior to label.  Then a point must be placed at the approximate location of the behavior in the image.  The image name, image size, training label, and label location is put into a csv format.  You will use a single csv for training AlphaClass; the csv can include multiple labels.
+AlphaClass is a supervised classification method, which means it must have labeled data on which to train a model.  Creating the training data is a two step process *Extraction* and *Annotation*. 
 
-We have provided a jupyter notebook to extract individual frames from a video and save them as single images.  See the labeling_tools/extract_frames/.  
+**Extraction** First, the user must extract frames from the video showing the behavior to label and sorts them into separate folders for each behavior.  For example, if I extract 1000 frames, I would then divide them into folders for Rearing, Nothing, Grooming, Huddle.  It is a good idea to include the 'Nothing' label to show negative examples, where none of the behaviors are happening. We have provided a jupyter notebook to extract individual frames from a video and save them as single images.  See the labeling_tools/extract_frames/.  
+
+**Annotation** Next, a point must be placed at the approximate location of the behavior in the image.  The image name, image size, training label, and label location is put into a csv format.  You will use a single csv for training AlphaClass (the csv can include multiple labels).  We recommend using the website www.makesense.ai to help with annotation. 
+1.	Go to www.makesense.ai
+2.	Click on **Get Started**
+3.	Upload your video frames
+4.	Click on **Object Detection**
+5.	Create your behavior labels 
+  1.	Put one for each sub behavior
+  2.	Rearing, Huddle, Grooming, Nothing
+6.	Click on **Start Project** and begin labeling 
+  1.	Use ‘Point’ label type
+7.	When finished, click on **Actions** → Export annotations → single CSV file 
+  1.	name the CSV file: labels
+8.	Create a folder with two subfolders and label the subfolders: images and labels 
+  1.	In the images folder, upload your video frames; keep all images in a single folder.  Do not use the subfolder structure you used for annotation.
+  2.	In the labels folder, upload the exported CSV file from makesense.ai and change the excel file to labels.csv.
+
+In the end, you should have a folder of extracted images saved in images, and a folder called labels containing a single file named labels.csv.
+Training_Data/
+└── images
+    ├── image1.jpg
+    ├── image2.jpg
+    ├── image3.jpg
+    ├── image4.jpg
+    ├── image5.jpg
+    ├── image6.jpg
+└── labels
+    ├── labels.csv
+
 
