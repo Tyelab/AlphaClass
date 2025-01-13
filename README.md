@@ -69,3 +69,35 @@ Here is an example of the labels.csv.  Note that image4 contains multiple labels
 |-----------|------|------|-------|----|------|
 
 
+## Training the model
+After you have set up your training_data directory with the appropriate examples of labels and images directories, and added labels.csv to your labels directory, you are ready to train the model.  Update the file standard.json to point to your training_data folder in `labeled_data_path`, correct the image size of your frames as needed in `image_training_width` and `image_training_height`, set the batch size as needed for your GPU and any other features of the training model.  Then run:
+```
+cd alphaclass\src
+python train.py --options standard.json
+```
+Results for the trained model will be saved in the Results directory.	Every time you run command: `python train.py --options standard.json`, whether it be successful or not, it will create folder called run0,1,..,.n When successful, each run folder contains 5 files:
+1.	`augmentation.json` contains the parameters for augmenting the dataset during training.
+2.	`metrics.txt` (can load onto jupyter notebook and plot) 
+	each column is `epoch #, train loss, test loss, learning rate/over time`
+3.	The output of the best model, e.g. `resnet.best.pt`
+4.	The output of the most recent model, e.g. `resnet.last.pt`
+5.	The parameters file `options.json` contains location of where results are saved (`exp_path`), which video it was run on (`streams`), what model weights were used for inference (`weights_path`), the original training data folder (`labeled_data_path`), and other parameters used for inference.
+
+
+## Tracking/running inference on all frames
+Let's assume you have successfully trained a model and results are output to this folder: Results\run0.  In the following examples, you might need to edit the file paths to match your outputs.
+
+To track the labels across all video frames, you would run
+```
+cd alphaclass\src
+python video_inference.py --options ..\..\Results\run0\options.json --streams <<Full_Path_to_Video>> --weights_path ..\..\Results\run0\resnet.best.pt
+```
+where `<<Full_Path_to_Video>>` is the full path to the video you want to track.  
+The results will saved to the `Results\run0\video_inference_runs\run0`.  
+
+You can visualize the output using the plot function, which will add colored points to your video on frames containg given behavior labels.
+```
+python plot.py --options ..\..\Results\run0\video_inference_runs\run0\video_inference_options.json --streams <<Full_Path_to_Video>>
+```
+
+## Organization of output h5 file
