@@ -33,16 +33,13 @@ AlphaClass is a supervised classification method, which means it must have label
 2.	Click on **Get Started**
 3.	Upload your video frames
 4.	Click on **Object Detection**
-5.	Create your behavior labels 
-  1.	Put one for each sub behavior
-  2.	Rearing, Huddle, Grooming, Nothing
-6.	Click on **Start Project** and begin labeling 
-  1.	Use ‘Point’ label type
-7.	When finished, click on **Actions** → Export annotations → single CSV file 
-  1.	name the CSV file: labels
-8.	Create a folder with two subfolders and label the subfolders: images and labels 
-  1.	In the images folder, upload your video frames; keep all images in a single folder.  Do not use the subfolder structure you used for annotation.
-  2.	In the labels folder, upload the exported CSV file from makesense.ai and change the excel file to labels.csv.
+5.	Create your behavior labels.  Put one label for each sub behavior, such as Rearing, Huddle, Grooming, Nothing
+6.	Click on **Start Project** and begin labeling using the ‘Point’ label type
+7.	When finished, click on **Actions** → Export annotations → single CSV file
+8.	Rename the CSV file: labels.csv
+9.	Create a folder with two subfolders and label the subfolders: images and labels 
+  -	In the images folder, upload your video frames; keep all images in a single folder.  Do not use the subfolder structure you used for annotation.
+  -	In the labels folder, upload the exported CSV file from makesense.ai and change the excel file to labels.csv.
 
 In the end, you should have a folder of extracted images saved in images, and a folder called labels containing a single file named labels.csv.
 ```
@@ -57,5 +54,18 @@ Training_Data/
 └── labels
     ├── labels.csv
 ```
+
+Here is an example of the labels.csv.  Note that image4 contains multiple labels. 
+
+|-----------|------|------|------------|----|-----|
+| :--- |     :----: | ---: | :--- | :----: | ---: |
+| Grooming  | 	236|	236 | image1.jpg |960|  540  |
+| Nothing|	236|	236|	image2.jpg|	960|	540|
+| Rearing|	283|	252|	image3.jpg|	960|	540|
+| Rearing|	275|	266|	image4.jpg|	960|	540|
+| Huddle|	275|	266|	image4.jpg|	960|	540|
+| Nothing|	231|	413|	image5.jpg|	960|	540|
+| Nothing|	236|	236|	image6.jpg|	960|	540|
+|-----------|------|------|-------|----|------|
 
 
