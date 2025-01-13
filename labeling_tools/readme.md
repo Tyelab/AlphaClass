@@ -14,19 +14,50 @@ In the demo example, you will sift through frames and divide them into folders f
 - OneFriendEat (200)  ??
 
 
-# Annotation
- 
-1.	www.makesense.ai
-2.	Click on Get Started
-3.	Upload your video frames
-4.	Click on Object Detection
-5.	Create your behavior labels 
-	1.	You will create each behavior label, separately. AlphaClass is a binary classifier.
-	2.	In the demo example, you will need labels for each of these behaviors: Attending, huddle, climbing, OneFriendEat
-6.	Click on Start Project and begin labeling Point
-7.	When finished, click on Actions → Export annotations → single CSV file 
-	1.	name the CSV file: labels
-8.	Create a folder with two subfolders and label the subfolders: images and labels 
-	1.	In the images folder, upload your video frames
-	2.	In the labels folder, upload the exported CSV file from makesense.ai and change the excel file to labels (from step 8 below)
-9.	Move the folder containing the subfolders to the AlphaClass folder on Goat
+# Annotating training data
+
+Although you can annotate in whatever way works for you, we recommend using the website [www.makesense.ai](http://www.makesense.ai/).  
+These instructions describe how to use that website for annotation, and assume you have extracted images from your videos for each behavior you wish to label.
+
+1. Click on **Get Started**
+2. Upload your video frames
+3. Click on **Object Detection**
+4. Create your behavior labels
+    a. Put one label for each sub behavior
+    b. In the demo example, you will need labels for each of these behaviors: Attending, huddle, climbing, OneFriendEat
+5. Click on **Start Project** and begin labeling
+    a. Point
+6. When finished, click on **Actions** → Export annotations → single CSV file
+    a. name the CSV file: labels
+7. Create a folder with two subfolders and label the subfolders: **images** and **labels**
+    a. In the images folder, upload your video frames
+    b. In the labels folder, upload the exported CSV file from makesense.ai and change the excel file to *labels (from step 8 below)
+8. Move the folder containing the subfolders to the AlphaClass folder
+
+
+In the end, you should have a folder of extracted images saved in images, and a folder called labels containing a single file named labels.csv.
+```
+Training_Data/
+└── images
+    ├── image1.jpg
+    ├── image2.jpg
+    ├── image3.jpg
+    ├── image4.jpg
+    ├── image5.jpg
+    ├── image6.jpg
+└── labels
+    ├── labels.csv
+```
+
+Here is an example of how the labels.csv is organized.  Note that in this example, image4 contains multiple labels. 
+
+|-----------|------|------|------------|----|-----|
+| :--- |     :----: | ---: | :--- | :----: | ---: |
+| Grooming  | 	236|	236 | image1.jpg |960|  540  |
+| Nothing|	236|	236|	image2.jpg|	960|	540|
+| Rearing|	283|	252|	image3.jpg|	960|	540|
+| Rearing|	275|	266|	image4.jpg|	960|	540|
+| Huddle|	275|	266|	image4.jpg|	960|	540|
+| Nothing|	231|	413|	image5.jpg|	960|	540|
+| Nothing|	236|	236|	image6.jpg|	960|	540|
+|-----------|------|------|-------|----|------|
