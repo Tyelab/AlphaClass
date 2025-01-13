@@ -3,12 +3,12 @@
 Although you can annotate in whatever way works for you, we recommend using the website [www.makesense.ai](http://www.makesense.ai/).  
 These instructions describe how to use that website for annotation, and assume you have extracted images from your videos for each behavior you wish to label.
 
-1. Click on Get Started
+1. Click on **Get Started**
 2. Upload your video frames
-3. Click on Object Detection
+3. Click on **Object Detection**
 4. Create your behavior labels
     a. Put one for each sub behavior
-    b. Attending, huddle, climbing, OneFriendEat
+    b. Attending, huddle, climbing, nothing
 5. Click on **Start Project** and begin labeling
     a. Point
 6. When finished, click on **Actions** → Export annotations → single CSV file
