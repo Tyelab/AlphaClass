@@ -35,3 +35,29 @@ These instructions describe how to use that website for annotation, and assume y
 8. Move the folder containing the subfolders to the AlphaClass folder
 
 
+In the end, you should have a folder of extracted images saved in images, and a folder called labels containing a single file named labels.csv.
+```
+Training_Data/
+└── images
+    ├── image1.jpg
+    ├── image2.jpg
+    ├── image3.jpg
+    ├── image4.jpg
+    ├── image5.jpg
+    ├── image6.jpg
+└── labels
+    ├── labels.csv
+```
+
+Here is an example of how the labels.csv is organized.  Note that in this example, image4 contains multiple labels. 
+
+|-----------|------|------|------------|----|-----|
+| :--- |     :----: | ---: | :--- | :----: | ---: |
+| Grooming  | 	236|	236 | image1.jpg |960|  540  |
+| Nothing|	236|	236|	image2.jpg|	960|	540|
+| Rearing|	283|	252|	image3.jpg|	960|	540|
+| Rearing|	275|	266|	image4.jpg|	960|	540|
+| Huddle|	275|	266|	image4.jpg|	960|	540|
+| Nothing|	231|	413|	image5.jpg|	960|	540|
+| Nothing|	236|	236|	image6.jpg|	960|	540|
+|-----------|------|------|-------|----|------|
