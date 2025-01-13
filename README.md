@@ -101,3 +101,7 @@ python plot.py --options ..\..\Results\run0\video_inference_runs\run0\video_infe
 ```
 
 ## Organization of output h5 file
+The main output of the video inference is a data.h5 file.  This file contains outputs for each frame and its form depends on the number of labels and how many overlapping labels are present in your dataset.  
+1. `points`
+2. `time`
+3. `confs`
