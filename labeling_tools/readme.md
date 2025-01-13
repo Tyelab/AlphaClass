@@ -19,19 +19,16 @@ In the demo example, you will sift through frames and divide them into folders f
 Although you can annotate in whatever way works for you, we recommend using the website [www.makesense.ai](http://www.makesense.ai/).  
 These instructions describe how to use that website for annotation, and assume you have extracted images from your videos for each behavior you wish to label.
 
-1. Click on **Get Started**
-2. Upload your video frames
-3. Click on **Object Detection**
-4. Create your behavior labels
-4a. Put one label for each sub behavior
-4b. In the demo example, you will need labels for each of these behaviors: Attending, huddle, climbing, OneFriendEat
-5. Click on **Start Project** and begin labeling using **Point** option.
-6. When finished, click on **Actions** → Export annotations → single CSV file
-6a. Name the CSV file: labels.csv
-7. Create a folder with two subfolders and label the subfolders: **images** and **labels**
-7a. In the images folder, upload your video frames
-7b. In the labels folder, upload the exported CSV file from makesense.ai and change the excel file to *labels (from step 8 below)
-8. Move the folder containing the subfolders to the AlphaClass folder
+1. Click on **Get Started** to upload your video frames.
+3. Click on **Object Detection** to create your behavior labels
+5. Put one label for each sub behavior.
+6. In the demo example, you need labels for each of these behaviors: Attending, huddle, climbing, OneFriendEat
+7. Click on **Start Project** and begin labeling using the **Point** option.
+8. When finished, click on **Actions** → Export annotations → single CSV file.  Rename the CSV file to **labels.csv**.
+10. Create your "training data" folder with two subfolders and label the subfolders: **images** and **labels**
+11. In the images folder, upload your video frames.
+12. In the labels folder, upload the exported CSV file from makesense.ai. Change the excel file to *labels (from step 9 above).
+13. Move the "training data" folder (containing the subfolders) to the AlphaClass folder.
 
 
 In the end, you should have a folder of extracted images saved in images, and a folder called labels containing a single file named labels.csv.
