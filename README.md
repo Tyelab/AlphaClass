@@ -112,7 +112,10 @@ The main output of the video inference is a data.h5 file.  This file contains ou
 We have provided an h5_to_csv.py file to convert this data to a more easily useable format for viewing detected labels across videos.  [add function]
 
 
-
+## To add
+- license
+- citation: please reference Caroline's paper and Aneesh Bal contributions as primary author.
+- reference ultralytics too?
 
 
 
