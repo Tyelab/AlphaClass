@@ -26,7 +26,10 @@ AlphaClass has been tested on Windows 10 Pro with a GPU (Quadro RTX 4000), that 
 # Labeling data
 AlphaClass is a supervised classification method, which means it must have labeled data on which to train a model.  Creating the training data is a two step process *Extraction* and *Annotation*. 
 
-**Extraction** First, the user must extract frames from the video showing the behavior to label and sorts them into separate folders for each behavior.  For example, if I extract 1000 frames, I would then divide them into folders for Rearing, Nothing, Grooming, Huddle.  It is a good idea to include the 'Nothing' label to show negative examples, where none of the behaviors are happening. We have provided a jupyter notebook to extract individual frames from a video and save them as single images.  See the labeling_tools/extract_frames/.  
+**Extraction** First, the user must extract frames from the video showing the behavior to label and sorts them into separate folders for each behavior.  
+For example, if I extract 1000 frames, I would then divide them into folders for Rearing, Grooming, Huddle.  
+It is a good idea to include negative examples, that is, example images that do not show the labeled behaviors.  However, do not include the label "Nothing" or "None". 
+We have provided a jupyter notebook to extract individual frames from a video and save them as single images.  See the labeling_tools/extract_frames/.  
 
 **Annotation** Next, a point must be placed at the approximate location of the behavior in the image.  The image name, image size, training label, and label location is put into a csv format.  You will use a single csv for training AlphaClass (the csv can include multiple labels).  We recommend using the website www.makesense.ai to help with annotation. 
 1.	Go to www.makesense.ai
@@ -101,7 +104,18 @@ python plot.py --options ..\..\Results\run0\video_inference_runs\run0\video_infe
 ```
 
 ## Organization of output h5 file
-The main output of the video inference is a data.h5 file.  This file contains outputs for each frame and its form depends on the number of labels and how many overlapping labels are present in your dataset.  
+The main output of the video inference is a data.h5 file.  This file contains outputs for each frame and its specific form depends on the number of labels and how many overlapping labels are present in your dataset.  
 1. `points`
 2. `time`
 3. `confs`
+
+We have provided an h5_to_csv.py file to convert this data to a more easily useable format for viewing detected labels across videos.  [add function]
+
+
+
+
+
+
+
+
+
