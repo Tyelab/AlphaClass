@@ -242,9 +242,9 @@ if __name__ == '__main__':
 
     ## increment path
     i = 0
-    while os.path.exists(os.path.join(c['exp_path'], 'evaluation_runs', 'run%s' % i)):
+    while os.path.exists(os.path.join(c['exp_path'], 'evaluation_runs', 'run%02d' % i)):
         i+=1
-    c['run_savepath'] = os.path.join(c['exp_path'], 'evaluation_runs', f'run{i}')
+    c['run_savepath'] = os.path.join(c['exp_path'], 'evaluation_runs', f'run{i:02d}')
     os.makedirs(c['run_savepath'])
     os.makedirs(os.path.join(c['run_savepath'], 'preds'))
     os.makedirs(os.path.join(c['run_savepath'], 'gt'))

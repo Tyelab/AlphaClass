@@ -387,9 +387,9 @@ if __name__ == '__main__':
 
     ## increment save path
     i = 0
-    while os.path.exists(os.path.join('..', 'Results', 'run%s' % i)):
+    while os.path.exists(os.path.join('..', 'Results', 'run%02d' % i)):
         i+=1
-    options['exp_path'] = os.path.join('..', 'Results', 'run{}'.format(i))
+    options['exp_path'] = os.path.join('..', 'Results', f'run{i:02d}')
     os.makedirs(options['exp_path'])
 
     ## save all configs to file
