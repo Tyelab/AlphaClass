@@ -63,14 +63,12 @@ Here is an example of the labels.csv.  Note that image4 contains multiple labels
 |-----------|------|------|------------|----|-----|
 | :--- |     :----: | ---: | :--- | :----: | ---: |
 | Grooming  | 	236|	236 | image1.jpg |960|  540  |
-| Nothing|	236|	236|	image2.jpg|	960|	540|
 | Rearing|	283|	252|	image3.jpg|	960|	540|
 | Rearing|	275|	266|	image4.jpg|	960|	540|
 | Huddle|	275|	266|	image4.jpg|	960|	540|
-| Nothing|	231|	413|	image5.jpg|	960|	540|
-| Nothing|	236|	236|	image6.jpg|	960|	540|
 |-----------|------|------|-------|----|------|
 
+Note, the image2.jpg, image5.jpg and image6.jpg are examples where there is not grooming, rearing or huddle behavior occuring.  These remain in your image directory but you do not need to label these images.
 
 ## Training the model
 After you have set up your training_data directory with the appropriate examples of labels and images directories, and added labels.csv to your labels directory, you are ready to train the model.  Update the file standard.json to point to your training_data folder in `labeled_data_path`, correct the image size of your frames as needed in `image_training_width` and `image_training_height`, set the batch size as needed for your GPU and any other features of the training model.  Then run:
