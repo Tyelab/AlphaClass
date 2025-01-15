@@ -10,7 +10,7 @@ from copy import deepcopy
 
 from models.layers_helper import DUC
 
-
+#combine ResNet (Residual Network) with DUC (Dense Upsampling Convolution)
 class ResNet_DUC(nn.Module):
     def __init__(self, backend, nClasses):
         super(ResNet_DUC, self).__init__()

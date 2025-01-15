@@ -1,7 +1,8 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
-
+# DUC (Dense Upsampling Convolution)  replaces traditional upsampling layers with 
+# dense upsampling to recover the spatial resolution lost during downsampling in ResNet
 class DUC(nn.Module):
     '''
     INPUT: inplanes, planes, upscale_factor
