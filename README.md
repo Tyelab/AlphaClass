@@ -14,8 +14,9 @@ Users first begin by defining areas of behavior by placing a point (circle) at t
 # Installation
 AlphaClass runs on a Windows OS platform and uses a conda environment.
 We have provide a yaml file with the requirements so you can easily create a conda environment.
+cd to the AlphaClass folder (usually in Documents\GitHub\AlphaClass).
 ```
-conda env create --file alphaclass/AlphaClass_env.yml
+conda env create --file alphaclass\AlphaClass_env.yml -y
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install albumentations==1.3.0 kornia==0.5.8 opencv-contrib-python==4.6.0.66 opencv-python==4.5.5.64 imutils==0.5.4
 ```
