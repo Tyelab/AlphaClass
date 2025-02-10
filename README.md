@@ -69,7 +69,7 @@ Here is an example of the labels.csv.  Note that image4 contains multiple labels
 | Huddle|	275|	266|	image4.jpg|	960|	540|
 |-----------|------|------|-------|----|------|
 
-Note, the image2.jpg, image5.jpg and image6.jpg are examples where there is not grooming, rearing or huddle behavior occuring.  These remain in your image directory but you do not need to label these images.
+Note, the image2.jpg, image5.jpg and image6.jpg are examples where there is not grooming, rearing or huddle behavior occuring.  These remain in your image directory but you do not need to label these images, as it is understood they represent no behavior.
 
 ## Training the model
 After you have set up your training_data directory with the appropriate examples of labels and images directories, and added labels.csv to your labels directory, you are ready to train the model.  Update the file standard.json to point to your training_data folder in `labeled_data_path`, correct the image size of your frames as needed in `image_training_width` and `image_training_height`, set the batch size as needed for your GPU and any other features of the training model.  Then run:
@@ -95,7 +95,7 @@ cd alphaclass\src
 python video_inference.py --options ..\..\Results\run0\options.json --streams <<Full_Path_to_Video>> --weights_path ..\..\Results\run0\resnet.best.pt
 ```
 where `<<Full_Path_to_Video>>` is the full path to the video you want to track.  
-The results will saved to the `Results\run0\video_inference_runs\run0`.  
+The results are saved to the `Results\run0\video_inference_runs\run0`.  
 
 You can visualize the output using the plot function, which will add colored points to your video on frames containg given behavior labels.
 ```
