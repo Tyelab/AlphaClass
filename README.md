@@ -43,7 +43,7 @@ We have provided a jupyter notebook to extract individual frames from a video an
 8.	Rename the CSV file: labels.csv
 9.	Create a folder with two subfolders and label the subfolders: images and labels 
   -	In the images folder, upload your video frames; keep all images in a single folder.  Do not use the subfolder structure you used for annotation.
-  -	In the labels folder, upload the exported CSV file from makesense.ai and change the excel file to labels.csv.
+  -	In the labels folder, upload the exported CSV file from makesense.ai and change the excel filename to "labels.csv".
 
 In the end, you should have a folder of extracted images saved in images, and a folder called labels containing a single file named labels.csv.
 ```
