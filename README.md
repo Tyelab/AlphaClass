@@ -114,6 +114,7 @@ We have provided an h5_to_csv.py file to convert this data to a more easily usea
 ## To add
 - citation: [COMING SOON] please reference Caroline's paper and Aneesh Bal contributions as primary author.
 - reference ultralytics yolov4 too?
+- Bug Fix: why aren't predictions showing up in the right place?  (scaling problem somewhere)
 - Demo: add link to demo dataset; add notes on using demo dataset to get started.
 
 
