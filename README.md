@@ -112,10 +112,9 @@ We have provided an h5_to_csv.py file to convert this data to a more easily usea
 
 
 ## To add
-- license
-- citation: please reference Caroline's paper and Aneesh Bal contributions as primary author.
-- reference ultralytics too?
-- add link to demo dataset and add notes on using demo dataset to get started.
+- citation: [COMING SOON] please reference Caroline's paper and Aneesh Bal contributions as primary author.
+- reference ultralytics yolov4 too?
+- Demo: add link to demo dataset; add notes on using demo dataset to get started.
 
 
 
