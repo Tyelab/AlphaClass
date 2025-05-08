@@ -1,6 +1,6 @@
 # AlphaClass
 ## About
-AlphaClass is a 2-D behavioral estimation method that primarily uses keypoint detection to estimate behaviors directly from single images.
+AlphaClass is a 2-D behavioral estimation method that primarily uses keypoint detection to estimate behaviors directly from single images using a YOLO detection model.
 First, AlphaClass receives an image as an input, such as a single frame from a video of behaving mice. 
 Next, AlphaClass extracts features from these single frames via a downsampling approach using convolutional neural networks (CNN). 
 Following this step, AlphaClass performs non-max suppression to remove any faulty detections or low-confidence detections. 
